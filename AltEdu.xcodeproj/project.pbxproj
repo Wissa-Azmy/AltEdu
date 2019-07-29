@@ -66,6 +66,10 @@
 		446E160F22EF18F700FDD951 /* AltEdu */ = {
 			isa = PBXGroup;
 			children = (
+				446E164322EF20AB00FDD951 /* Lesson+CoreDataClass.swift */,
+				446E164422EF20AB00FDD951 /* Lesson+CoreDataProperties.swift */,
+				446E164522EF20AB00FDD951 /* Student+CoreDataClass.swift */,
+				446E164622EF20AB00FDD951 /* Student+CoreDataProperties.swift */,
 				446E164B22EF20C600FDD951 /* Data Model */,
 				446E161022EF18F700FDD951 /* AppDelegate.swift */,
 				446E161222EF18F700FDD951 /* SceneDelegate.swift */,
@@ -74,6 +78,7 @@
 				446E161C22EF18FA00FDD951 /* Assets.xcassets */,
 				446E161E22EF18FA00FDD951 /* LaunchScreen.storyboard */,
 				446E162122EF18FA00FDD951 /* Info.plist */,
+				446E161922EF18F700FDD951 /* AltEdu.xcdatamodeld */,
 			);
 			path = AltEdu;
 			sourceTree = "<group>";
@@ -81,11 +86,6 @@
 		446E164B22EF20C600FDD951 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				446E164322EF20AB00FDD951 /* Lesson+CoreDataClass.swift */,
-				446E164422EF20AB00FDD951 /* Lesson+CoreDataProperties.swift */,
-				446E164522EF20AB00FDD951 /* Student+CoreDataClass.swift */,
-				446E164622EF20AB00FDD951 /* Student+CoreDataProperties.swift */,
-				446E161922EF18F700FDD951 /* AltEdu.xcdatamodeld */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
