@@ -20,7 +20,7 @@ class LessonsVC: UIViewController {
     }
     
     private var lessonsService: LessonsService?
-    private var students = [Student]()
+    private var studentsList = [Student]()
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -28,11 +28,15 @@ class LessonsVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         navigationItem.title = "AltEdu"
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        getAllStudents()
     }
 
     // MARK: - Private
     @IBAction func addBtnTapped(_ sender: UIBarButtonItem) {
-        presentAlertController(actionType: "Add")
+        presentAlertController(actionType: "add")
     }
     
     private func presentAlertController(actionType: String) {
@@ -53,14 +57,14 @@ class LessonsVC: UIViewController {
                 if let lessonType = LessonType(rawValue: lesson.lowercased()) {
                     self?.lessonsService?.addStudent(name: studentName, for: lessonType, completion: { (success, students) in
                         if success {
-                            self?.students = students
+                            self?.studentsList = students
                         }
                     })
                 }
             }
             
             DispatchQueue.main.async {
-                self?.tableView.reloadData()
+                self?.getAllStudents()
             }
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (action) in
@@ -72,27 +76,36 @@ class LessonsVC: UIViewController {
         
         present(alertController, animated: true)
     }
+    
+    private func getAllStudents() {
+        if let students = lessonsService?.getStudens() {
+            studentsList = students
+            tableView.reloadData()
+        }
+    }
 
 }
 
 // MARK: - Table view data source
 extension LessonsVC: UITableViewDelegate, UITableViewDataSource {
     
-       func numberOfSections(in tableView: UITableView) -> Int {
-           // #warning Incomplete implementation, return the number of sections
-           return 1
-       }
-
-       func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-           // #warning Incomplete implementation, return the number of rows
-           return 2
-       }
-
-       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-           let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-           // Configure the cell...
-
-           return cell
-       }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return studentsList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StudentCell", for: indexPath)
+        
+        // Configure the cell...
+        cell.textLabel?.text = studentsList[indexPath.row].name
+        cell.detailTextLabel?.text = studentsList[indexPath.row].lesson?.type
+        
+        return cell
+    }
 }

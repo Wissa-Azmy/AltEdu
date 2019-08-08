@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 enum LessonType: String {
-    case iOS, Android
+    case ios, android
 }
 
 typealias StudentHandler = (Bool, [Student]) -> ()
@@ -25,6 +25,7 @@ class LessonsService {
     
     // MARK: - Public Methods
     
+    // CREATE
     func addStudent(name: String, for type: LessonType, completion: StudentHandler) {
         let student = Student(context: moc)
         student.name = name
@@ -34,9 +35,29 @@ class LessonsService {
             students.append(student)
             
             completion(true, students)
+            return
         }
         
         completion(false, students)
+    }
+    
+    // READ
+    func getStudens() -> [Student]? {
+        let sortByLesson = NSSortDescriptor(key: "lesson.type", ascending: true)
+        let sortByName = NSSortDescriptor(key: "name", ascending: true)
+        let sortDescriptors = [sortByLesson, sortByName]
+        
+        let request: NSFetchRequest<Student> = Student.fetchRequest()
+        request.sortDescriptors = sortDescriptors
+        
+        var students: [Student]?
+        do {
+            students = try moc.fetch(request)
+        } catch  {
+            print("Error reading students list: \(error.localizedDescription)")
+        }
+        
+        return students
     }
     
     // MARK: - Private Methods
