@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		446126D922FC0B470038F882 /* LessonsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446126D822FC0B470038F882 /* LessonsService.swift */; };
 		446E161122EF18F700FDD951 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E161022EF18F700FDD951 /* AppDelegate.swift */; };
 		446E161322EF18F700FDD951 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E161222EF18F700FDD951 /* SceneDelegate.swift */; };
 		446E161522EF18F700FDD951 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E161422EF18F700FDD951 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		446126D822FC0B470038F882 /* LessonsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsService.swift; sourceTree = "<group>"; };
 		446E160D22EF18F700FDD951 /* AltEdu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AltEdu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		446E161022EF18F700FDD951 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		446E161222EF18F700FDD951 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		446126D722FC0B060038F882 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				446126D822FC0B470038F882 /* LessonsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		446E160422EF18F700FDD951 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +76,7 @@
 		446E160F22EF18F700FDD951 /* AltEdu */ = {
 			isa = PBXGroup;
 			children = (
+				446126D722FC0B060038F882 /* Services */,
 				446E164B22EF20C600FDD951 /* Data Model */,
 				446E161022EF18F700FDD951 /* AppDelegate.swift */,
 				446E161222EF18F700FDD951 /* SceneDelegate.swift */,
@@ -162,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				446E164722EF20AB00FDD951 /* Lesson+CoreDataClass.swift in Sources */,
+				446126D922FC0B470038F882 /* LessonsService.swift in Sources */,
 				446E161522EF18F700FDD951 /* ViewController.swift in Sources */,
 				446E164A22EF20AB00FDD951 /* Student+CoreDataProperties.swift in Sources */,
 				446E161122EF18F700FDD951 /* AppDelegate.swift in Sources */,
