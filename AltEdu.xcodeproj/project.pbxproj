@@ -10,7 +10,7 @@
 		446126D922FC0B470038F882 /* LessonsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446126D822FC0B470038F882 /* LessonsService.swift */; };
 		446E161122EF18F700FDD951 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E161022EF18F700FDD951 /* AppDelegate.swift */; };
 		446E161322EF18F700FDD951 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E161222EF18F700FDD951 /* SceneDelegate.swift */; };
-		446E161522EF18F700FDD951 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E161422EF18F700FDD951 /* ViewController.swift */; };
+		446E161522EF18F700FDD951 /* LessonsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E161422EF18F700FDD951 /* LessonsVC.swift */; };
 		446E161822EF18F700FDD951 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446E161622EF18F700FDD951 /* Main.storyboard */; };
 		446E161B22EF18F700FDD951 /* AltEdu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 446E161922EF18F700FDD951 /* AltEdu.xcdatamodeld */; };
 		446E161D22EF18FA00FDD951 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 446E161C22EF18FA00FDD951 /* Assets.xcassets */; };
@@ -26,7 +26,7 @@
 		446E160D22EF18F700FDD951 /* AltEdu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AltEdu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		446E161022EF18F700FDD951 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		446E161222EF18F700FDD951 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		446E161422EF18F700FDD951 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		446E161422EF18F700FDD951 /* LessonsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsVC.swift; sourceTree = "<group>"; };
 		446E161722EF18F700FDD951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		446E161A22EF18F700FDD951 /* AltEdu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AltEdu.xcdatamodel; sourceTree = "<group>"; };
 		446E161C22EF18FA00FDD951 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 				446E164B22EF20C600FDD951 /* Data Model */,
 				446E161022EF18F700FDD951 /* AppDelegate.swift */,
 				446E161222EF18F700FDD951 /* SceneDelegate.swift */,
-				446E161422EF18F700FDD951 /* ViewController.swift */,
+				446E161422EF18F700FDD951 /* LessonsVC.swift */,
 				446E161622EF18F700FDD951 /* Main.storyboard */,
 				446E161C22EF18FA00FDD951 /* Assets.xcassets */,
 				446E161E22EF18FA00FDD951 /* LaunchScreen.storyboard */,
@@ -174,7 +174,7 @@
 			files = (
 				446E164722EF20AB00FDD951 /* Lesson+CoreDataClass.swift in Sources */,
 				446126D922FC0B470038F882 /* LessonsService.swift in Sources */,
-				446E161522EF18F700FDD951 /* ViewController.swift in Sources */,
+				446E161522EF18F700FDD951 /* LessonsVC.swift in Sources */,
 				446E164A22EF20AB00FDD951 /* Student+CoreDataProperties.swift in Sources */,
 				446E161122EF18F700FDD951 /* AppDelegate.swift in Sources */,
 				446E164922EF20AB00FDD951 /* Student+CoreDataClass.swift in Sources */,

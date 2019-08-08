@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
-class ViewController: UIViewController {
+class LessonsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
