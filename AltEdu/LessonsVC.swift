@@ -64,14 +64,15 @@ class LessonsVC: UIViewController {
                 }
             } else {
                 self.lessonsService?.update(student: self.studentToUpdate!, withName: studentName, forLesson: lesson)
+                self.studentToUpdate = nil
             }
             
             DispatchQueue.main.async {
                 self.getAllStudents()
             }
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (action) in
-            
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default) { [unowned self] (action) in
+            self.studentToUpdate = nil
         }
         
         alertController.addAction(defaultAction)
@@ -117,5 +118,13 @@ extension LessonsVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         studentToUpdate = studentsList[indexPath.row]
         presentAlertController(actionType: "update")
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            lessonsService?.delete(student: studentsList[indexPath.row])
+            studentsList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
 }

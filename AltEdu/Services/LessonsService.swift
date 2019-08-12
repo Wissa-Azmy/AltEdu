@@ -82,6 +82,15 @@ class LessonsService {
         save()
     }
     
+    // DELETE
+    func delete(student: Student) {
+        let lesson = student.lesson
+        lesson?.removeFromStudents(student)
+        if let index = students.firstIndex(of: student) { students.remove(at: index) }
+        moc.delete(student)
+        save()
+    }
+    
     // MARK: - Private Methods
     
     // TODO: - Check if lesson Exists
